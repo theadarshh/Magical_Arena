@@ -30,29 +30,9 @@ The player with lower health attacks first.
 - **Player Attributes**: Each player has `health`, `strength`, and `attack` attributes that affect their performance in combat.
 - **Attack Order**: The player with the lower health attacks first.
 
-## How to Run the Code
-
-### Prerequisites
-
-- **Java 8 or higher** (for Java implementations)
-- A terminal/command line interface
-
-### Steps to Run
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/theadarshh/Magical_Arena.git
-   ```
-
-2. **Compile the Java files**:
-   ```bash
-   javac MagicalArena.java Player.java
-   ```
-
-3. **Run the Game**:
-   ```bash
-   java MagicalArena
-   ```
+## Prerequisites
+- Java 8 or higher
+- Eclipse IDE (for running the project in Eclipse)
 
 ## Code Design and Structure
 
@@ -107,6 +87,6 @@ public void testAttackCalculation() {
 ## GitHub Repository
 
 The full code and additional details for the **Magical Arena** game can be found in the GitHub repository:  
-[Magical Arena - GitHub Repository]((https://github.com/theadarshh))
+[Magical Arena - GitHub Repository](https://github.com/theadarshh)
 
----
+--- 

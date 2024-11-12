@@ -41,8 +41,7 @@ The player with lower health attacks first.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/magical-arena.git
-   cd magical-arena
+   git clone https://github.com/theadarshh/Magical_Arena.git
    ```
 
 2. **Compile the Java files**:

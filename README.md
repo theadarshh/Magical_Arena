@@ -87,6 +87,6 @@ public void testAttackCalculation() {
 ## GitHub Repository
 
 The full code and additional details for the **Magical Arena** game can be found in the GitHub repository:  
-[Magical Arena - GitHub Repository](https://github.com/theadarshh/Magical_Arena.git)
+[Magical Arena - GitHub Repository](https://github.com/theadarshh)
 
 --- 

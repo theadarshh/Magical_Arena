@@ -84,9 +84,4 @@ public void testAttackCalculation() {
 - **Player Customization**: Allow players to customize characters with magical powers or items.
 - **Graphical Interface**: Create a GUI for a more interactive experience.
 
-## GitHub Repository
-
-The full code and additional details for the **Magical Arena** game can be found in the GitHub repository:  
-[Magical Arena - GitHub Repository](https://github.com/theadarshh)
-
---- 
+---

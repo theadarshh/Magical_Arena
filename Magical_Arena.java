@@ -7,13 +7,13 @@ class Player {
     private int strength;
     private int attack;
 
-    public Player(String name, int health, int strength, int attack) {
+    public Player(String name, int health, int strength, int attack) 
+    {
         this.name = name;
         this.health = health;
         this.strength = strength;
         this.attack = attack;
     }
-
     public String getName() {
         return name;
     }
@@ -29,19 +29,18 @@ class Player {
     public int getStrength() {
         return strength;
     }
-
     public int getAttack() {
         return attack;
     }
 
-    // Method to simulate rolling a six-sided die
-    private int rollDie() {
+    private int rollDie()  // Method to simulate rolling a six-sided die
+    {
         Random rand = new Random();
         return rand.nextInt(6) + 1; // Generates a number between 1 and 6
     }
 
-    // Method to perform an attack on another player
-    public void attack(Player opponent) {
+    public void attack(Player opponent)  // Method to perform an attack on another player
+    {
         int attackRoll = rollDie();
         int defendRoll = opponent.rollDie();
 
@@ -57,15 +56,17 @@ class Player {
         System.out.printf("Net Damage to %s: %d | %s's Remaining Health: %d%n%n", 
                           opponent.getName(), netDamage, opponent.getName(), opponent.getHealth());
     }
-
-    // Check if the player is still alive
-    public boolean isAlive() {
+  
+    public boolean isAlive() // Check if the player is still alive
+    {
         return this.health > 0;
     }
 }
 
-public class MagicalArena {
-    public static void main(String[] args) {
+public class MagicalArena 
+{
+    public static void main(String[] args) 
+    {
         Scanner scanner = new Scanner(System.in);
 
         // Hardcoded player names
@@ -97,32 +98,40 @@ public class MagicalArena {
         System.out.println("\nThe match begins!\n");
 
         // Simulate the match
-        while (playerA.isAlive() && playerB.isAlive()) {
-            if (playerA.getHealth() <= playerB.getHealth()) {
+        while (playerA.isAlive() && playerB.isAlive()) 
+        {
+            if (playerA.getHealth() <= playerB.getHealth()) 
+            {
                 System.out.println(playerA.getName() + " attacks!");
                 playerA.attack(playerB);
-                if (!playerB.isAlive()) {
+                if (!playerB.isAlive()) 
+                {
                     System.out.println(playerB.getName() + " has been defeated! " + playerA.getName() + " wins!");
                     break;
                 }
 
                 System.out.println(playerB.getName() + " attacks!");
                 playerB.attack(playerA);
-                if (!playerA.isAlive()) {
+                if (!playerA.isAlive()) 
+                {
                     System.out.println(playerA.getName() + " has been defeated! " + playerB.getName() + " wins!");
                     break;
                 }
-            } else {
+            } 
+            else 
+            {
                 System.out.println(playerB.getName() + " attacks!");
                 playerB.attack(playerA);
-                if (!playerA.isAlive()) {
+                if (!playerA.isAlive()) 
+                {
                     System.out.println(playerA.getName() + " has been defeated! " + playerB.getName() + " wins!");
                     break;
                 }
 
                 System.out.println(playerA.getName() + " attacks!");
                 playerA.attack(playerB);
-                if (!playerB.isAlive()) {
+                if (!playerB.isAlive()) 
+                {
                     System.out.println(playerB.getName() + " has been defeated! " + playerA.getName() + " wins!");
                     break;
                 }

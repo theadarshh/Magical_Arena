@@ -1,8 +1,10 @@
-# Magical Arena: A Turn-based Combat Game
+# Magical Arena Game
 
 ## Overview
 
-**Magical Arena** is a player-versus-player combat game where two players battle in a turn-based system. Each player has three attributes: health, strength, and attack. Players attack and defend in turns, and the game continues until one player's health reaches zero.
+**Magical Arena** is a simple turn-based combat simulation game where two players, Player A and Player B, compete in a battle. Each player has stats for health, strength, and attack power, and the game alternates between players attacking each other. The winner is determined when one player's health reaches zero.
+
+This program is written in Java and demonstrates basic object-oriented programming concepts, including encapsulation, methods, and game logic.
 
 The core mechanics are as follows:
 - **Attack**: The attacking player rolls a die and multiplies the roll by their attack attribute to calculate damage.
@@ -50,6 +52,25 @@ The `MagicalArena` class contains the game loop. It initializes the players and 
 - Player input for attributes (health, strength, attack).
 - Turn-based combat where players alternate attacking and defending.
 - Ends the game when a player's health reaches zero.
+  
+## How It Works
+1. *User Input:* The game begins by asking the user to enter the stats for each player:
+
+- Health: Determines the player’s endurance.
+- Strength: Impacts the player’s defensive power.
+- Attack: Influences the player’s offensive power.
+  
+2. *Game Stimulation* 
+- During each turn, players take turns attacking each other.
+- A six-sided die is rolled to determine both the attacking power of the attacker and the defensive power of the opponent.
+- The net damage is calculated as follows:
+  net damage=max(0,(attack×attack roll)−(strength×defense roll))
+- The opponent’s health is reduced by the net damage dealt.
+
+3. *Game Flow:*
+- The player with lower health starts the turn. If both players have equal health, Player A attacks first.
+- After each attack, the program checks if the attacked player’s health has reached zero.
+- If a player’s health is zero or below, the game announces the winner and ends.
 
 ## Unit Tests
 
@@ -60,16 +81,56 @@ Unit tests are written using **JUnit** and cover the following:
 
 ### Example Test Case:
 
-```java
-@Test
-public void testAttackCalculation() {
-    Player playerA = new Player("Player A", 50, 10, 5);
-    Player playerB = new Player("Player B", 100, 5, 10);
-    
-    playerA.attack(playerB);
-    
-    assertEquals(70, playerB.getHealth());
-}
+```output
+Enter stats for Player A:
+Health: 50
+Strength: 5
+Attack: 10
+Enter stats for Player B:
+Health: 100
+Strength: 10
+Attack: 5
+
+The match begins!
+
+Player A attacks!
+Player A rolls 4 (Attack: Player A), Player B rolls 5 (Defense: Player B)
+Net Damage to Player B: 0 | Player B's Remaining Health: 100
+
+Player B attacks!
+Player B rolls 2 (Attack: Player B), Player A rolls 3 (Defense: Player A)
+Net Damage to Player A: 0 | Player A's Remaining Health: 50
+
+-----
+Player A attacks!
+Player A rolls 5 (Attack: Player A), Player B rolls 1 (Defense: Player B)
+Net Damage to Player B: 40 | Player B's Remaining Health: 60
+
+Player B attacks!
+Player B rolls 4 (Attack: Player B), Player A rolls 4 (Defense: Player A)
+Net Damage to Player A: 0 | Player A's Remaining Health: 50
+
+-----
+Player A attacks!
+Player A rolls 5 (Attack: Player A), Player B rolls 2 (Defense: Player B)
+Net Damage to Player B: 30 | Player B's Remaining Health: 30
+
+Player B attacks!
+Player B rolls 1 (Attack: Player B), Player A rolls 3 (Defense: Player A)
+Net Damage to Player A: 0 | Player A's Remaining Health: 50
+
+-----
+Player B attacks!
+Player B rolls 6 (Attack: Player B), Player A rolls 6 (Defense: Player A)
+Net Damage to Player A: 0 | Player A's Remaining Health: 50
+
+Player A attacks!
+Player A rolls 6 (Attack: Player A), Player B rolls 3 (Defense: Player B)
+Net Damage to Player B: 30 | Player B's Remaining Health: 0
+
+Player B has been defeated! Player A wins!
+Game over.
+
 ```
 
 ## Code Quality
